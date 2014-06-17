@@ -8,17 +8,17 @@ require './lib/thinking-sphinx/lib/thinking_sphinx/capistrano'
 load 'deploy/assets'
 
 set :rvm_type, :system
-set :rvm_ruby_string, '1.9.3-p392'
+set :rvm_ruby_string, '1.9.3-p547'
 set :rvm_path, "/usr/local/rvm"
 set :rvm_gem_path, "#{rvm_path}/gems/ruby-#{rvm_ruby_string}"
 
 # main details
-set :server, "antikobpae.cpe.ku.ac.th"
-set :port, 9999
-set :application, "antikobpae"
-role :web, "antikobpae.cpe.ku.ac.th"
-role :app, "antikobpae.cpe.ku.ac.th"
-role :db,  "antikobpae.cpe.ku.ac.th", :primary => true
+set :server, "10.106.30.20"
+set :port, 22
+set :application, "navyedu-plag"
+role :web, "10.106.30.20"
+role :app, "10.106.30.20"
+role :db,  "10.106.30.20", :primary => true
 
 # server details
 default_run_options[:pty] = true
@@ -28,7 +28,7 @@ set :deploy_via, :remote_cache
 set :user, "passenger"
 set :group, "passenger"
 set :use_sudo, false
-set :distribution, :linux # :redhat / :rhel / :fedora / :centos / :debian / :ubuntu / :linux
+set :distribution, :ubuntu # :redhat / :rhel / :fedora / :centos / :debian / :ubuntu / :linux
 
 # repo details
 set :scm, :git
@@ -116,7 +116,7 @@ namespace :deploy do
   end
   
   task :config, :roles => :app do
-    server = "antikobpae.cpe.ku.ac.th"
+    server = "10.106.30.20"
     run [
           "cp #{release_path}/config/deploy/templates/#{server}/antikobpae.yml #{shared_path}/config/antikobpae.yml",
           "cp #{release_path}/config/deploy/templates/#{server}/database.yml #{shared_path}/config/database.yml",

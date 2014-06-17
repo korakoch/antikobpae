@@ -1,0 +1,29 @@
+development: &non_production_settings
+  default_tolerence: 20
+  storage_path: '/home/developer/antikobpae/uploads' 
+  bing_api_key: "4800F95CAE10179DCED5EF241E3B16B077592394"
+
+  soffice_bin: '/usr/bin/libreoffice'
+  abiword_bin: '/usr/bin/libreoffice'
+  swath_bin: '/usr/bin/swath'
+  wkhtmltopdf_bin : '/usr/bin/wkhtmltopdf'
+  chardet_bin: '/usr/bin/chardet'
+  
+  #-- Not Required Yet/Anymore ---    
+  google_api_key: ""
+  iconv_bin: '/usr/local/bin/iconv'
+  #-------------------------------
+
+test:
+  <<: *non_production_settings
+
+production:
+  default_tolerence: 20
+  storage_path: '/home/passenger/antikobpae/uploads' 
+  bing_api_key: "4800F95CAE10179DCED5EF241E3B16B077592394"
+
+  soffice_bin: '/usr/bin/libreoffice'
+  abiword_bin: '/usr/bin/libreoffice'
+  swath_bin: '/usr/bin/swath'
+  wkhtmltopdf_bin : '/usr/bin/wkhtmltopdf'
+  chardet_bin: '/usr/bin/chardet'
