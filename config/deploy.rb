@@ -33,7 +33,7 @@ set :distribution, :ubuntu # :redhat / :rhel / :fedora / :centos / :debian / :ub
 # repo details
 set :scm, :git
 set :scm_username, "passenger"
-set :repository, "git@github.com:gloaec/antikobpae.git"
+set :repository, "git@github.com:korakoch/antikobpae.git"
 set :branch, "master"
 set :git_enable_submodules, 1
 
